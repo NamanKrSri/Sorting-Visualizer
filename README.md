@@ -20,16 +20,6 @@ This project visually demonstrates how different sorting algorithms work step-by
 - 📊 **Complexity Display** – Shows best, average, worst, and space complexity for each algorithm.
 - 🧩 **Clean UI** – Neon-themed interface with smooth transitions.
 
----
-
-## 🧮 Supported Algorithms
-
-| Algorithm | Time Complexity (Best) | Average | Worst | Space |
-|------------|------------------------|----------|--------|--------|
-| **Bubble Sort** | O(n) | O(n²) | O(n²) | O(1) |
-| *(More algorithms can be added easily — like Selection, Insertion, Merge, Quick, etc.)* |
-
----
 
 ## 🧰 Tech Stack
 
@@ -44,3 +34,10 @@ This project visually demonstrates how different sorting algorithms work step-by
 1. **Clone the repository**
    ```bash
    git clone https://github.com/NamanKrSri/Sorting-Visualizer.git
+2.Open the project folder
+
+   -cd Sorting-Visualizer
+   
+3.Run the project
+
+Simply open the index.html file in your browser.
