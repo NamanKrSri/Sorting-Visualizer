@@ -1,0 +1,575 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@300;400;500&display=swap');
+
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling with dark gradient background */
+body {
+    background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+    font-family: 'Roboto Mono', monospace;
+    color: #00ff88;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Main container that centers content and adds padding */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header section styling */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* Main title with gradient text effect */
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3em;
+    font-weight: 900;
+    background: linear-gradient(90deg, #00ff88, #00ddff, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+/* Subtitle styling */
+.subtitle {
+    font-size: 0.9em;
+    color: #00ddff;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+/* Control panel styling - flexbox layout for responsive design */
+.controls {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: rgba(26, 26, 46, 0.6);
+    border-radius: 15px;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+/* Individual control group (label + input) */
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Label styling for controls */
+label {
+    font-size: 0.8em;
+    color: #00ddff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Styling for select dropdowns and range inputs */
+select, input[type="range"] {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #00ff88;
+    color: #00ff88;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 200px;
+}
+
+/* Hover and focus effects for inputs */
+select:hover, select:focus {
+    border-color: #00ddff;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+    outline: none;
+}
+
+/* Dropdown option styling */
+select option {
+    background: #1a1a2e;
+    color: #00ff88;
+}
+
+/* Custom styling for range slider track */
+input[type="range"] {
+    padding: 5px;
+    -webkit-appearance: none;
+    height: 8px;
+    background: linear-gradient(90deg, #00ff88, #00ddff);
+    border-radius: 5px;
+}
+
+/* Custom styling for range slider thumb (Chrome/Safari) */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #ff00ff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+}
+
+/* Custom styling for range slider thumb (Firefox) */
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #ff00ff;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+/* Base button styling */
+.btn {
+    background: linear-gradient(135deg, #00ff88, #00ddff);
+    color: #0a0a0f;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 20px rgba(0, 255, 136, 0.3);
+}
+
+/* Button hover effect */
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 255, 136, 0.5);
+}
+
+/* Button active (pressed) effect */
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Disabled button state */
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Secondary button variant (Generate New) */
+.btn-secondary {
+    background: linear-gradient(135deg, #ff00ff, #ff0066);
+}
+
+.btn-secondary:hover {
+    box-shadow: 0 8px 30px rgba(255, 0, 255, 0.5);
+}
+
+/* Stop button variant */
+.btn-stop {
+    background: linear-gradient(135deg, #ff4444, #cc0000);
+}
+
+.btn-stop:hover:not(:disabled) {
+    box-shadow: 0 8px 30px rgba(255, 68, 68, 0.5);
+}
+
+/* Time complexity information panel */
+.complexity-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(26, 26, 46, 0.6);
+    border-radius: 15px;
+    border: 1px solid rgba(0, 221, 255, 0.2);
+    flex-wrap: wrap;
+}
+
+/* Individual complexity item */
+.complexity-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Complexity label styling */
+.complexity-label {
+    font-size: 0.75em;
+    color: #00ddff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Complexity value styling */
+.complexity-value {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #ff00ff;
+}
+
+/* Container for the visualization bars */
+.visualization-container {
+    background: rgba(10, 10, 15, 0.8);
+    border-radius: 15px;
+    padding: 40px 20px;
+    /* border: 1px solid rgba(0, 255, 136, 0.2);
+    box-shadow: 0 10px 50px rgba(0, 255, 136, 0.1); */
+    border: 1px solid rgba(235, 240, 236, 1);
+    box-shadow: 0 10px 50px rgba(246, 248, 247, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated scanning line effect at the top */
+.visualization-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00ff88, #00ddff, #ff00ff, transparent);
+    animation: scan 3s linear infinite;
+}
+
+/* Scanning animation keyframes */
+@keyframes scan {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Container that holds all array bars */
+#arrayContainer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 400px;
+    gap: 2px;
+    padding: 0 10px;
+}
+
+/* Individual bar styling */
+.array-bar {
+    flex: 1;
+    /* background: linear-gradient(180deg, #00ff88, #00ddff);
+    border-radius: 3px 3px 0 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.3); */
+    background: linear-gradient(180deg, #f7faf9ff, #ebeeeeff);
+    border-radius: 3px 3px 0 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    position: relative;
+}
+
+/* Bar state when being compared */
+.array-bar.comparing {
+    background: linear-gradient(180deg, #ff00ff, #ff0066);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.6);
+}
+
+/* Bar state when being swapped */
+.array-bar.swapping {
+    background: linear-gradient(180deg, #ffaa00, #ff0066);
+    box-shadow: 0 0 20px rgba(255, 170, 0, 0.6);
+    transform: scaleX(1.2);
+}
+
+/* Bar state when sorted */
+.array-bar.sorted {
+    /* background: linear-gradient(180deg, #00ddff, #0066ff);
+    box-shadow: 0 0 15px rgba(0, 221, 255, 0.5); */
+     background: linear-gradient(180deg, #ff0000ff, #ff0000ff);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Statistics panel styling */
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(26, 26, 46, 0.6);
+    border-radius: 15px;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+/* Individual stat item */
+.stat-item {
+    text-align: center;
+}
+
+/* Stat label styling */
+.stat-label {
+    font-size: 0.8em;
+    color: #00ddff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+/* Stat value styling */
+.stat-value {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #00ff88;
+}
+
+/* Responsive design for tablets and smaller screens */
+@media (max-width: 1024px) {
+    /* Adjust title size for tablets */
+    h1 {
+        font-size: 2.5em;
+    }
+    
+    /* Stack complexity info for better readability */
+    .complexity-info {
+        gap: 20px;
+    }
+    
+    /* Reduce visualization height on tablets */
+    #arrayContainer {
+        height: 350px;
+    }
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+    /* Reduce padding on mobile */
+    .container {
+        padding: 15px;
+    }
+    
+    /* Smaller title for mobile screens */
+    h1 {
+        font-size: 2em;
+        letter-spacing: 2px;
+    }
+    
+    /* Smaller subtitle */
+    .subtitle {
+        font-size: 0.75em;
+    }
+    
+    /* Stack controls vertically on mobile */
+    .controls {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    /* Full width inputs on mobile */
+    select, input[type="range"] {
+        min-width: 100%;
+    }
+    
+    /* Stack buttons and make them full width */
+    .btn {
+        width: 100%;
+        padding: 12px 20px;
+    }
+    
+    /* Stack complexity info in 2x2 grid on mobile */
+    .complexity-info {
+        gap: 15px;
+        padding: 12px;
+    }
+    
+    .complexity-item {
+        flex: 1 1 45%;
+    }
+    
+    /* Reduce visualization height on mobile */
+    #arrayContainer {
+        height: 300px;
+        gap: 1px;
+    }
+    
+    /* Reduce visualization container padding */
+    .visualization-container {
+        padding: 30px 15px;
+    }
+    
+    /* Stack stats vertically on mobile */
+    .stats {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    /* Reduce stat font sizes */
+    .stat-label {
+        font-size: 0.75em;
+    }
+    
+    .stat-value {
+        font-size: 1.3em;
+    }
+}
+
+/* Responsive design for small mobile devices */
+@media (max-width: 480px) {
+    /* Even smaller title for small phones */
+    h1 {
+        font-size: 1.5em;
+        letter-spacing: 1px;
+    }
+    
+    /* Smaller subtitle */
+    .subtitle {
+        font-size: 0.7em;
+        letter-spacing: 1px;
+    }
+    
+    /* Reduce all padding and margins */
+    .container {
+        padding: 10px;
+    }
+    
+    header {
+        margin-bottom: 20px;
+    }
+    
+    .controls {
+        padding: 12px;
+        gap: 12px;
+        margin-bottom: 15px;
+    }
+    
+    /* Smaller button text */
+    .btn {
+        font-size: 0.8em;
+        padding: 10px 15px;
+    }
+    
+    /* Smaller labels */
+    label {
+        font-size: 0.7em;
+    }
+    
+    /* Smaller select and input elements */
+    select, input[type="range"] {
+        font-size: 0.8em;
+        padding: 8px 12px;
+    }
+    
+    /* Stack complexity info vertically */
+    .complexity-info {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .complexity-item {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .complexity-label {
+        font-size: 0.7em;
+    }
+    
+    .complexity-value {
+        font-size: 1em;
+    }
+    
+    /* Further reduce visualization height */
+    #arrayContainer {
+        height: 250px;
+    }
+    
+    .visualization-container {
+        padding: 20px 10px;
+    }
+    
+    /* Smaller stats */
+    .stats {
+        padding: 12px;
+        gap: 12px;
+        margin-top: 15px;
+    }
+    
+    .stat-value {
+        font-size: 1.2em;
+    }
+}
+
+/* Responsive design for very small screens */
+@media (max-width: 360px) {
+    /* Minimal title size */
+    h1 {
+        font-size: 1.3em;
+    }
+    
+    /* Hide subtitle on very small screens to save space */
+    .subtitle {
+        display: none;
+    }
+    
+    /* Compact visualization */
+    #arrayContainer {
+        height: 200px;
+    }
+    
+    /* Smaller complexity values */
+    .complexity-value {
+        font-size: 0.9em;
+    }
+}
+
+/* Landscape orientation optimization for mobile devices */
+@media (max-width: 768px) and (orientation: landscape) {
+    /* Reduce vertical spacing in landscape mode */
+    header {
+        margin-bottom: 15px;
+    }
+    
+    .controls {
+        margin-bottom: 15px;
+    }
+    
+    .complexity-info {
+        margin-bottom: 15px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .complexity-item {
+        flex: 1 1 45%;
+    }
+    
+    /* Optimize visualization height for landscape */
+    #arrayContainer {
+        height: 250px;
+    }
+    
+    .stats {
+        flex-direction: row;
+        margin-top: 15px;
+    }
+}

@@ -1,0 +1,103 @@
+<!-- 
+    SORTING VISUALIZER - HTML STRUCTURE
+    This file contains the complete HTML structure for the sorting visualizer
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <!-- Main container that holds all content -->
+    <div class="container">
+        <!-- Header section with title and subtitle -->
+        <header>
+            <h1>SORTING VISUALIZER</h1>
+            <p class="subtitle">Algorithm Visualization Engine</p>
+        </header>
+
+        <!-- Control panel for user interactions -->
+        <div class="controls">
+            <!-- Algorithm selection dropdown with time complexity display -->
+            <div class="control-group">
+                <label for="algorithm">Algorithm</label>
+                <select id="algorithm">
+                    <!-- Each option includes the algorithm name and time complexity -->
+                    <option value="bubble">Bubble Sort - O(n²)</option>
+                    <option value="selection">Selection Sort - O(n²)</option>
+                    <option value="insertion">Insertion Sort - O(n²)</option>
+                    <option value="merge">Merge Sort - O(n log n)</option>
+                    <option value="quick">Quick Sort - O(n log n)</option>
+                    <option value="heap">Heap Sort - O(n log n)</option>
+                </select>
+            </div>
+
+            <!-- Array size slider control -->
+            <div class="control-group">
+                <label for="arraySize">Array Size: <span id="sizeValue">50</span></label>
+                <input type="range" id="arraySize" min="10" max="100" value="50">
+            </div>
+
+            <!-- Speed slider control (controls animation delay) -->
+            <div class="control-group">
+                <label for="speed">Speed: <span id="speedValue">50</span>ms</label>
+                <input type="range" id="speed" min="10" max="200" value="50">
+            </div>
+
+            <!-- Action buttons for controlling the sorting process -->
+            <button class="btn" id="startBtn" onclick="startSorting()">Start Sort</button>
+            <button class="btn btn-stop" id="stopBtn" onclick="stopSorting()" disabled>Stop</button>
+            <button class="btn btn-secondary" id="resetBtn" onclick="generateArray()">Generate New</button>
+        </div>
+
+        <!-- Time complexity information panel -->
+        <div class="complexity-info">
+            <div class="complexity-item">
+                <span class="complexity-label">Best Case:</span>
+                <span class="complexity-value" id="bestCase">O(n²)</span>
+            </div>
+            <div class="complexity-item">
+                <span class="complexity-label">Average Case:</span>
+                <span class="complexity-value" id="avgCase">O(n²)</span>
+            </div>
+            <div class="complexity-item">
+                <span class="complexity-label">Worst Case:</span>
+                <span class="complexity-value" id="worstCase">O(n²)</span>
+            </div>
+            <div class="complexity-item">
+                <span class="complexity-label">Space:</span>
+                <span class="complexity-value" id="spaceComplexity">O(1)</span>
+            </div>
+        </div>
+
+        <!-- Visualization container where bars are displayed -->
+        <div class="visualization-container">
+            <div id="arrayContainer"></div>
+        </div>
+
+        <!-- Statistics display showing real-time metrics -->
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-label">Comparisons</div>
+                <div class="stat-value" id="comparisons">0</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Array Accesses</div>
+                <div class="stat-value" id="accesses">0</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Time Elapsed</div>
+                <div class="stat-value" id="timeElapsed">0.00s</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
